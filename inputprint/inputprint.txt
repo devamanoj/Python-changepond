@@ -1,0 +1,7 @@
+print() and input() - built in functions
+print() function
+=> is used to get the output
+=>is used to display the specified message screen or other standard output device
+
+input() function
+ 

@@ -1,0 +1,32 @@
+DATATYPEs:
+- are the categorization or classification of data items
+- it represents the kind of value that tells
+
+what operation can be performed on a particular data
+
+built - in data types:
+-numeric - integer,float and complex
+-sequence type : string,list,tuple
+Boolean
+set 
+dictionary
+
+Mutable and immutable objects can change their state or content 
+ex:list,dict,set
+immutable obj:
+-cant change their content or state
+ex: int,float,bool,str,tuple
+
+List: built in functions 
+mutable sequence or mutable objects- is a sequence data type which is used to store collection of datqa
+
+slicing 
+
+tuple-immutable objects
+-used to store the values
+-ordered
+
+string - sequence  of character
+-create a string using single quote,double quote or for multiline statement triple quotes
+-immutable
+-
