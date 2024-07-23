@@ -1,0 +1,125 @@
+1.Create a menu_card list (Using function)
+veg_starter = ['paneer 65','chilly paneer','veg crispy']
+1) Display menu card
+2)Add Starter in the menu card
+3)Update Starter in the menu card
+4)Remove Starter in the menu card
+
+
+veg_starter = ['paneer 65', 'chilly paneer', 'veg crispy']
+
+# Function to display the menu card
+def display_menu(menu):
+
+    print("Menu Card:")
+    for item in menu:
+        print(item)
+
+# Function to add a starter to the menu card
+def add_starter(menu, new_starter):
+   
+    if new_starter not in menu:
+        menu.append(new_starter)
+        print(f"Added Successfully: {new}")
+    else:
+        print(f"{new_starter} is already in the menu!")
+
+# Function to update a starter in the menu card
+def update_starter(menu, old_starter, new_starter):
+    
+    if old_starter in menu:
+        index = menu.index(old_starter)
+        menu[index] = new_starter
+        print(f"Updated Successfully: {old_starter} to {new_starter}")
+    else:
+        print(f"{old_starter} is not in the menu!")
+
+# Function to remove a starter from the menu card
+def remove_starter(menu, starter_to_remove):
+
+    if starter_to_remove in menu:
+        menu.remove(starter_to_remove)
+        print(f"Removed Successfully: {starter_to_remove}")
+    else:
+        print(f"{starter_to_remove} is not in the menu!")
+
+# Main function to demonstrate the operations
+def main():
+   
+    while True:
+        print("\n1) Display menu card")
+        print("2) Add Starter in the menu card")
+        print("3) Update Starter in the menu card")
+        print("4) Remove Starter in the menu card")
+        print("5) Exit")
+
+        choice = int(input("Enter your choice: "))
+
+        if choice == 1:
+            display_menu(veg_starter)
+        elif choice == 2:
+            new_starter = input("Which starter do you want to add to the menu? ")
+            add_starter(veg_starter, new_starter)
+        elif choice == 3:
+            old_starter = input("Which starter do you want to update in the menu? ")
+            new_starter = input(f"What is the new name for {old_starter}? ")
+            update_starter(veg_starter, old_starter, new_starter)
+        elif choice == 4:
+            starter_to_remove = input("Which starter do you want to remove from the menu? ")
+            remove_starter(veg_starter, starter_to_remove)
+        elif choice == 5:
+            break
+        else:
+            print("Invalid choice! Please choose a valid option.")
+
+if __name__ == "__main__":
+    main()
+
+
+2 Question:Write a program which will take input from the user and Returns(Using function)
+1)Addition on the list
+Example: [2,3,4,5,6,7]  --> 27
+Note: don't use sum()
+2)Maximum from the list
+Example: [2,3,4,5,6,7]  --> 7
+Note: don't use max()
+
+def calculate_sum(numbers):
+   
+    sum = 0
+    for num in numbers:
+        sum += num
+    return sum
+def find_maximum(numbers):
+  
+    
+    max_num = numbers[0]
+    for num in numbers:
+        if num > max_num:  
+            max_num = num  
+    return max_num
+def main():
+    
+
+    size = int(input("Enter the size of the list: "))
+    
+    
+    numbers = []
+    
+    
+    for i in range(1, size + 1):
+        number = int(input(f"Enter the number {i}: "))
+        numbers.append(number)
+    
+   
+    print("User List (numbers):", numbers)
+    
+    
+    total_sum = calculate_sum(numbers)
+    print("Sum of the list:", total_sum)
+
+    max_num = find_maximum(numbers)
+    print("Maximum number in the list:", max_num)
+
+if __name__ == "__main__":
+    main()
