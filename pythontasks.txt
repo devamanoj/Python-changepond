@@ -423,3 +423,289 @@ if __name__ == "__main__":
     main()
 
 ===========================================================================================================================================
+friday task
+
+#Write an application which copy content from one file to another(other file will be created from user)
+
+import os
+
+def create_file(filename):
+    if os.path.exists(filename):
+        print('File already exists.')
+    else:
+        file_create = open(filename, 'w')
+      
+
+def copy_content(file1, file2):
+    if os.path.exists(file1):
+        src_file = open(file1, 'r')
+        content = src_file.read()
+      
+
+        dest_file = open(file2, 'w')
+        dest_file.write(content)
+      
+
+        print(f'Content copied from {file1} to {file2}')
+    else:
+        print(f' file {file1} does not exist.')
+
+def main():
+    print('Enter the name of the  file:')
+    source_file = input()
+
+    print('Enter the name of the destination file:')
+    destination_file = input()
+
+    create_file(destination_file)
+    copy_content(source_file, destination_file)
+
+if __name__ == "__main__":
+    main()
+    ======================================================================================================================
+
+    write an application which will delete file.
+
+    import os
+
+def create_file(filename):
+    if os.path.exists(filename):
+        print('File already exists.')
+    else:
+        file_create = open(filename, 'w')
+
+def copy_content(file1, file2):
+    if os.path.exists(file1):
+        src_file = open(file1, 'r')
+        content = src_file.read()
+
+        dest_file = open(file2, 'w')
+        dest_file.write(content)
+
+        print(f'Content copied from {file1} to {file2}')
+    else:
+        print(f'File {file1} does not exist.')
+
+def delete_file(filename):
+    if os.path.exists(filename):
+        os.remove(filename)
+        print(f'File {filename} has been deleted.')
+    else:
+        print(f'File {filename} does not exist.')
+
+def main():
+    print('Enter the name of the source file:')
+    source_file = input()
+
+    print('Enter the name of the destination file:')
+    destination_file = input()
+
+    create_file(destination_file)
+    copy_content(source_file, destination_file)
+
+    print('Do you want to delete any file? (yes/no)')
+    answer = input().lower()
+
+    if answer == 'yes':
+        print('Enter the name of the file to delete:')
+        file_to_delete = input()
+        delete_file(file_to_delete)
+
+if __name__ == "__main__":
+    main()
+===============================================================================================================
+Write an application which will append your existing file
+
+import os
+
+def create_file(filename):
+    if os.path.exists(filename):
+        print('File already exists.')
+    else:
+        file_create = open(filename, 'w')
+        file_create.close()
+
+def copy_content(file1, file2):
+    if os.path.exists(file1):
+        src_file = open(file1, 'r')
+        content = src_file.read()
+        src_file.close()
+
+        dest_file = open(file2, 'a')  # Append mode
+        dest_file.write(content)
+        dest_file.close()
+
+        print(f'Content copied from {file1} to {file2}')
+    else:
+        print(f'File {file1} does not exist.')
+
+def append_to_file(filename):
+    if os.path.exists(filename):
+        print('Enter the text you want to append:')
+        user_text = input()
+
+        dest_file = open(filename, 'a')  
+        dest_file.write(user_text + '\n')
+        dest_file.close()
+
+        print(f'Text appended to {filename}')
+    else:
+        print(f'File {filename} does not exist.')
+
+def delete_file(filename):
+    if os.path.exists(filename):
+        os.remove(filename)
+        print(f'File {filename} has been deleted.')
+    else:
+        print(f'File {filename} does not exist.')
+
+def main():
+    print('Enter the name of the source file:')
+    source_file = input()
+
+    print('Enter the name of the destination file:')
+    destination_file = input()
+
+    create_file(destination_file)
+    copy_content(source_file, destination_file)
+
+    print('Do you want to append text to the destination file? (yes/no)')
+    answer = input().lower()
+
+    if answer == 'yes':
+        append_to_file(destination_file)
+
+    print('Do you want to delete any file? (yes/no)')
+    answer = input().lower()
+
+    if answer == 'yes':
+        print('Enter the name of the file to delete:')
+        file_to_delete = input()
+        delete_file(file_to_delete)
+
+if __name__ == "__main__":
+    main()
+====================================================================================================================
+
+Write an application which will duplicate files
+
+import os
+import filecmp
+
+# Function to compare two files
+def compare_files(file1, file2):
+    if not os.path.exists(file1):
+        print(f"{file1} does not exist")
+    elif not os.path.exists(file2):
+        print(f"{file2} does not exist")
+    else:
+        are_same = filecmp.cmp(file1, file2)
+        if are_same:
+            print(f"The files {file1} and {file2} are the same.")
+            os.remove(file1)
+            print(f"{file1} has been removed.")
+        else:
+            print(f"The files {file1} and {file2} are different.")
+
+# Function to create a new file
+def create_file(filename):
+    if os.path.exists(filename):
+        print('File already exists.')
+    else:
+        with open(filename, 'w') as file:
+            pass  # Create an empty file
+        print(f'{filename} has been created.')
+
+# Function to copy content from one file to another
+def copy_content(file1, file2):
+    if os.path.exists(file1):
+        with open(file1, 'r') as src_file:
+            content = src_file.read()
+        with open(file2, 'a') as dest_file:
+            dest_file.write(content)
+        print(f'Content copied from {file1} to {file2}')
+    else:
+        print(f'{file1} does not exist.')
+
+
+
+# Function to delete a file
+def delete_file(filename):
+    if os.path.exists(filename):
+        os.remove(filename)
+        print(f'{filename} has been deleted.')
+    else:
+        print(f'{filename} does not exist.')
+
+def main():
+    print('Enter the name of the source file:')
+    source_file = input()
+    
+    print('Enter the name of the destination file:')
+    destination_file = input()
+
+    create_file(destination_file)
+    copy_content(source_file, destination_file)
+
+
+    print('Do you want to compare files to check for duplicates? (yes/no)')
+    if input().strip().lower() == 'yes':
+        print('Enter the name of the second file to compare with the destination file:')
+        file_to_compare = input()
+        compare_files(destination_file, file_to_compare)
+
+    print('Do you want to delete any file? (yes/no)')
+    if input().strip().lower() == 'yes':
+        print('Enter the name of the file to delete:')
+        file_to_delete = input()
+        delete_file(file_to_delete)
+
+if __name__ == "__main__":
+    main()
+================================================================================================================
+Write a function that accepts a list of items a person wants on a sandwich.The function should have 
+one parameter that collects as many items as the function call provides, should print sandwich that's
+ being ordered.
+
+def make_sandwich(*items):
+    print("Making a sandwich with the following items:")
+    for item in items:
+        print(f"- {item}")
+    print("Your sandwich is ready!")
+
+def main():
+    print("Enter the number of toppings:")
+    num_items = int(input())
+    
+    sandwich_items = []
+    for _ in range(num_items):
+        item = input("Enter an item: ")
+        sandwich_items.append(item)
+    
+    # Unpack the list into the make_sandwich function
+    make_sandwich(*sandwich_items)
+
+if __name__ == "__main__":
+    main()
+================================================================================================================================
+
+
+Write a function that stores information about a car in a dictionary .The function should always receive
+ a manufacturer and a model name. It should then accept an arbitary number of keyword arguments. 
+
+ def make_car(manufacturer,model,**kwargs):
+    print(manufacturer)
+    print(model)
+    for key,value in kwargs.items():
+        print(key,value)
+def main():
+ 
+    make_car('Ford' , 'outback' ,color = 'Blue' , tow_package = True)
+if __name__=="__main__":
+    main()
+
+    ============================================================================================================
+    
+in car example use *args  also
+and **kwargs
+ 
