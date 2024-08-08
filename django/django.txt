@@ -1,0 +1,37 @@
+What is a framework- it is a structure that you can build software on it
+
+using framework saves time and reduces the risk of errors
+
+you don't need to configured it (it creates a directory structure)
+
+Libaries vs Framework
+- library(Collection of pre - written code that can be used to perform common task)
+
+user/programmer is calling the code
+
+-> import math
+-> math.sqrt(16)
+-> 4.0
+
+Framework:
+in framework it is the code in the framework that calls the code
+and framework tells you where you can put your code
+
+================================================================================================================
+DJANGO:
+- open source web framework written in python that alloes you to create web application
+-supported by an independent foundation(django software foundation)
+-django is primarily a backend framework, it has features that allow it to handle frontend development
+as well
+
+Why django?
+Set up easy
+Ready to user interface for administration activities
+
+=================================================================================================
+
+python package index(PyPi)
+
+Python Package index(PyPi):
+       -> Repository of software for the python programming language
+       -> (helps you to find and install software developed and shared by python community)
